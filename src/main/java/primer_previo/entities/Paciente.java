@@ -1,6 +1,7 @@
 package primer_previo.entities;
 
 import java.time.LocalDate;
+import java.time.Period;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -49,6 +50,9 @@ public class Paciente {
 	private float estatura;
 	
 	@Transient
+	private int edad;
+	
+	@Transient
 	private float imc;
 	
 	@Transient
@@ -70,11 +74,19 @@ public class Paciente {
 	}
 	
 	public float calcularImc() {
-		return this.peso /(this.estatura * this.estatura);
+		return peso /(estatura * estatura);
 	}
 	
 	public String setEstado() {
-		return "";
-			
+		 if(imc>=19 && imc<=24 && (edad >=19 && edad<=24)) {
+			 return "normal";
+		 }
+		return "normal";
+	}
+	
+	public int setEdad() {
+		LocalDate fechaActual = LocalDate.now();
+		Period periodo = Period.between(this.fechanacimiento, fechaActual);
+		return this.edad = periodo.getYears();
 	}
 }
