@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core"  %>
-<%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -60,10 +59,10 @@
 							<td><c:out value="${pac.peso}" /></td>
 							<td><c:out value="${pac.estatura}" /></td>
 							<td><c:out value="${pac.imc}" /></td>
-							<td><a href="edit?id=<c:out value='${est.id}' />"
+							<td><a href="edit?id=<c:out value='${pac.id}' />"
 								style="color: #343a40; text-decoration: underline">Editar</a>
 								&nbsp;&nbsp;&nbsp;&nbsp; <a
-								href="delete?id=<c:out value='${est.id}' />"
+								href="delete?id=<c:out value='${pac.id}' />"
 								style="color: #343a40; text-decoration: underline">Eliminar</a></td>
 						</tr>
 					</c:forEach>

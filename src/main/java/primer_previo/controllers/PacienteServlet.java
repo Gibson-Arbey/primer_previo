@@ -105,6 +105,33 @@ public class PacienteServlet extends HttpServlet {
 	
 	private void actualizarPaciente(HttpServletRequest request, HttpServletResponse response)  
 			throws ServletException, SQLException, IOException {
+		Paciente p = new Paciente();
+		int id = Integer.parseInt(request.getParameter("id"));
+		p = pDao.find(id);
+		String documento = request.getParameter("documento");
+		String nombre = request.getParameter("nombre");
+		String apellido = request.getParameter("apellido");
+		String email = request.getParameter("email");
+		String genero = request.getParameter("genero");
+		String fechanacimiento = request.getParameter("fechanacimiento");
+		LocalDate fecha = LocalDate.parse(fechanacimiento, format);
+		String telefono = request.getParameter("telefono");
+		String direccion = request.getParameter("direccion");
+		float peso = Float.parseFloat(request.getParameter("peso"));
+		float estatura = Float.parseFloat(request.getParameter("estatura"));
+		
+		p.setDocumento(documento);
+		p.setNombre(nombre);
+		p.setApellido(apellido);
+		p.setEmail(email);
+		p.setGenero(genero);
+		p.setFechanacimiento(fecha);
+		p.setTelefono(telefono);
+		p.setDireccion(direccion);
+		p.setPeso(peso);
+		p.setEstatura(estatura);
+		pDao.update(p);
+		response.sendRedirect("PacienteList");
 	}
 	
 	private void  eliminarPaciente(HttpServletRequest request, HttpServletResponse response)

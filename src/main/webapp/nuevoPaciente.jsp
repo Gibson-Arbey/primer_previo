@@ -64,13 +64,13 @@
                             <label>Telefono del paciente</label> <input type="text"   maxlength="10" value="<c:out value='${pac.telefono}' />" class="form-control" name="telefono">
                         </fieldset>
                         <fieldset class="form-group">
-                            <label>Direccion del paciente</label> <input type="text"  step="0.01" maxlength="100" value="<c:out value='${pac.direccion}' />" class="form-control" name="direccion">
+                            <label>Direccion del paciente</label> <input type="text" maxlength="100" value="<c:out value='${pac.direccion}' />" class="form-control" name="direccion">
                         </fieldset>
                         <fieldset class="form-group">
-                            <label>Peso del paciente</label> <input type="number"  step="0.01" maxlength="100" value="<c:out value='${pac.peso}' />" class="form-control" name="peso">
+                            <label>Peso del paciente</label> <input type="number"  step="0.01"  value="<c:out value='${pac.peso}' />" class="form-control" name="peso">
                         </fieldset>
                         <fieldset class="form-group">
-                            <label>Estatura del paciente</label> <input type="number"   maxlength="100" value="<c:out value='${pac.estatura}' />" class="form-control" name="estatura">
+                            <label>Estatura del paciente</label> <input type="number"  step="0.01" value="<c:out value='${pac.estatura}' />" class="form-control" name="estatura">
                         </fieldset>
                         <button type="submit" class="btn btn-success" style="background-color:#343a40; border:none">Guardar</button>
                         </form>
