@@ -50,4 +50,21 @@ public class Paciente {
 	
 	@Transient
 	private String imc;
+
+	public Paciente(String documento, String nombre, String apellido, String email, String genero,
+			LocalDate fechanacimiento, String telefono, String direccion, float peso, float estatura) {
+		super();
+		this.documento = documento;
+		this.nombre = nombre;
+		this.apellido = apellido;
+		this.email = email;
+		this.genero = genero;
+		this.fechanacimiento = fechanacimiento;
+		this.telefono = telefono;
+		this.direccion = direccion;
+		this.peso = peso;
+		this.estatura = estatura;
+	}
+	
+	
 }

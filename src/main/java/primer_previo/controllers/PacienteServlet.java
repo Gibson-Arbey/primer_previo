@@ -25,6 +25,7 @@ import primer_previo.entities.Paciente;
 public class PacienteServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     private PacienteDao pDao;
+    private DateTimeFormatter format; 
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -33,7 +34,7 @@ public class PacienteServlet extends HttpServlet {
         // TODO Auto-generated constructor stub
     }
     public void init(ServletConfig config) throws ServletException {
-    
+    	this.format = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 		this.pDao = new PacienteDao(); 	
 	}
 
@@ -87,7 +88,19 @@ public class PacienteServlet extends HttpServlet {
 	
 	private void insertarPaciente(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, SQLException, IOException {
-		
+		String documento = request.getParameter("documento");
+		String nombre = request.getParameter("nombre");
+		String apellido = request.getParameter("apellido");
+		String email = request.getParameter("email");
+		String genero = request.getParameter("genero");
+		String fechanacimiento = request.getParameter("fechanacimiento");
+		LocalDate fecha = LocalDate.parse(fechanacimiento, format);
+		String telefono = request.getParameter("telefono");
+		String direccion = request.getParameter("direccion");
+		float peso = Float.parseFloat(request.getParameter("peso"));
+		float estatura = Float.parseFloat(request.getParameter("estatura"));
+		pDao.insert(new Paciente(documento, nombre, apellido, email, genero, fecha, telefono, direccion, peso, estatura));
+		response.sendRedirect("PacienteList");
 	}
 	
 	private void actualizarPaciente(HttpServletRequest request, HttpServletResponse response)  
