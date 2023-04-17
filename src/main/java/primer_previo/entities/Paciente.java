@@ -49,7 +49,10 @@ public class Paciente {
 	private float estatura;
 	
 	@Transient
-	private String imc;
+	private float imc;
+	
+	@Transient
+	private String estado;
 
 	public Paciente(String documento, String nombre, String apellido, String email, String genero,
 			LocalDate fechanacimiento, String telefono, String direccion, float peso, float estatura) {
@@ -66,5 +69,12 @@ public class Paciente {
 		this.estatura = estatura;
 	}
 	
+	public float calcularImc() {
+		return this.peso /(this.estatura * this.estatura);
+	}
 	
+	public String setEstado() {
+		return "";
+			
+	}
 }

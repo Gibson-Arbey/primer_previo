@@ -146,7 +146,9 @@ public class PacienteServlet extends HttpServlet {
 			throws ServletException, SQLException, IOException {
 			List<Paciente> listPac = new ArrayList<>();
 			listPac = pDao.list(); 
-			
+			for(Paciente p: listPac) {
+				p.setImc();
+			}
 			request.setAttribute("listPacientes", listPac);
 			showPage(request, response,"index.jsp");
 	}

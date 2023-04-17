@@ -40,6 +40,7 @@
 						<th>Peso</th>
 						<th>Estatura</th>
 						<th>IMC</th>
+						<th>Estado</th>
 						<th>Acciones</th>
 					</tr>
 				</thead>
@@ -59,6 +60,7 @@
 							<td><c:out value="${pac.peso}" /></td>
 							<td><c:out value="${pac.estatura}" /></td>
 							<td><c:out value="${pac.imc}" /></td>
+							<td><c:out value="${pac.estado}" /></td>
 							<td><a href="edit?id=<c:out value='${pac.id}' />"
 								style="color: #343a40; text-decoration: underline">Editar</a>
 								&nbsp;&nbsp;&nbsp;&nbsp; <a
