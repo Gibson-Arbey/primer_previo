@@ -147,7 +147,7 @@ public class PacienteServlet extends HttpServlet {
 			List<Paciente> listPac = new ArrayList<>();
 			listPac = pDao.list(); 
 			for(Paciente p: listPac) {
-				p.setImc();
+				p.calcularImc();
 			}
 			request.setAttribute("listPacientes", listPac);
 			showPage(request, response,"index.jsp");
