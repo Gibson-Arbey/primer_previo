@@ -79,6 +79,15 @@ public class Paciente {
 	
 	public String setEstado() {
 		getEdad(this.fechanacimiento);
+		if(this.imc < 19) {
+			return this.estado = "bajo peso";
+		}
+		if (this.imc > 29 && this.genero=="M") {
+			return this.estado = "sobre peso";
+		} else if (this.imc > 28 && this.genero=="F") {
+			return this.estado = "sobre peso";
+		}
+			
 		 if(this.imc>=19 && this.imc<=24 && (this.edad >=19 && this.edad<=24)) {
 			 return this.estado = "normal";
 		 }
