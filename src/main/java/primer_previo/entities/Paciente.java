@@ -74,19 +74,21 @@ public class Paciente {
 	}
 	
 	public float calcularImc() {
-		return peso /(estatura * estatura);
+		return imc = this.peso /(this.estatura * this.estatura);
 	}
 	
 	public String setEstado() {
-		 if(imc>=19 && imc<=24 && (edad >=19 && edad<=24)) {
-			 return "normal";
+		getEdad(this.fechanacimiento);
+		 if(this.imc>=19 && this.imc<=24 && (this.edad >=19 && this.edad<=24)) {
+			 return this.estado = "normal";
 		 }
-		return "normal";
+		return this.estado = "normal";
 	}
 	
-	public int setEdad() {
+	public int getEdad(LocalDate fecha) {
 		LocalDate fechaActual = LocalDate.now();
-		Period periodo = Period.between(this.fechanacimiento, fechaActual);
+		Period periodo = Period.between(fecha, fechaActual);
 		return this.edad = periodo.getYears();
 	}
+	
 }
