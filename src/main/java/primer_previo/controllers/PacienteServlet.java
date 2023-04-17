@@ -46,7 +46,7 @@ public class PacienteServlet extends HttpServlet {
 		String action = request.getServletPath();
 		try {
 			switch(action) {
-			case"/Nuevo_paciente": showPage(request, response, "nuevoPaciente.jsp");
+			case"/Nuevo_Paciente": showPage(request, response, "nuevoPaciente.jsp");
 				break;
 			case"/delete": eliminarPaciente(request, response);
 				break;
