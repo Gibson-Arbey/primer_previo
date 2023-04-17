@@ -20,10 +20,10 @@
 	<br>
 	<div class="row">
 		<div class="container">
-	    	<h3 class="text-center">Listado de Estudiantes</h3>
+	    	<h3 class="text-center">Listado de Pacientes</h3>
 	    	<hr>
 	        <div class="container text-left">
-	        	<a href="<%=request.getContextPath()%>/Nuevo_Paciente" class="btn btn-success" style="background-color:#343a40; border:none">Inscribir estudiante</a>
+	        	<a href="<%=request.getContextPath()%>/Nuevo_Paciente" class="btn btn-success" style="background-color:#343a40; border:none">Inscribir paciente</a>
 	        </div>
 	        <br>
 	        <table class="table table-sm table-bordered " Style="text-align:center" >

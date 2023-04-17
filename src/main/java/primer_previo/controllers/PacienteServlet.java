@@ -79,7 +79,10 @@ public class PacienteServlet extends HttpServlet {
 	
 	private void  showEditForm(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
-		
+		int id = Integer.parseInt(request.getParameter("id"));
+		Paciente p = pDao.find(id);
+		request.setAttribute("pac", p);
+		request.getRequestDispatcher("nuevoPaciente.jsp").forward(request, response);
 	}
 	
 	private void insertarPaciente(HttpServletRequest request, HttpServletResponse response)
@@ -93,6 +96,10 @@ public class PacienteServlet extends HttpServlet {
 	
 	private void  eliminarPaciente(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, SQLException, IOException {
+		int id = Integer.parseInt(request.getParameter("id"));
+		Paciente p = pDao.find(id);
+		pDao.delete(p);
+		response.sendRedirect("PacienteList");
 	}
 	
 	private void listPacientes(HttpServletRequest request, HttpServletResponse response)  
